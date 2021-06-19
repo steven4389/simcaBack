@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+    simca_back:
+        container_name: simca_back
+        restart: always
+        build: .
+        ports:
+            - "3000:3700"
+        links:
+            - mongo        
+    mongo:
+        container_name: database_simca
+        image: mongo
+        ports:
+            - "27018:27017"
+
